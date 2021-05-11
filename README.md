@@ -1,5 +1,5 @@
 <h1 align="center" style="border-bottom: none;">📚 rx-observable-map</h1>
-<h3 align="center">Better TypeScript Control Flow</h3>
+<h3 align="center">RX enhanced Map class</h3>
 <p align="center">
   <a href="https://circleci.com/gh/patrickmichalina/rx-observable-map">
     <img alt="circeci" src="https://circleci.com/gh/patrickmichalina/rx-observable-map.svg?style=shield">
@@ -20,7 +20,7 @@
   </a>
 </p>
 
-**rx-observable-map** helps you write safer code by using abstractions over messy control flow and state.
+**rx-observable-map**
 
 # Installation
 You can use this library in the browser, node, or a bundler
