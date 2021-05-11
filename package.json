@@ -1,0 +1,99 @@
+{
+  "name": "rx-observable-map",
+  "version": "0.0.0-development",
+  "description": "ES6 Map with RXJS change streams",
+  "main": "index.js",
+  "module": "index.esm.js",
+  "commonJs": "index.cjs.js",
+  "typings": "index.d.ts",
+  "sideEffects": false,
+  "author": "Patrick Michalina <patrickmichalina@mac.com> (https://patrickmichalina.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrickmichalina/rx-observable-map"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "functional",
+    "rxjs"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test.watch": "jest --watch",
+    "dist": "ts-node ./scripts/publish-prep.ts",
+    "lint": "tsc --noEmit && eslint '{src,apps,libs,test,e2e,tools}/**/*.ts'",
+    "lint.fix": "npm run lint -- --fix",
+    "build": "tsc -p tsconfig.build.json && npm run rollup && terser dist/index.js -o dist/index.min.js --source-map",
+    "rollup": "rollup -c rollup.config.js"
+  },
+  "release": {
+    "pkgRoot": "dist"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/fs-extra": "^9.0.11",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "codecov": "^3.8.2",
+    "eslint": "^7.25.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-rxjs": "3.3.0",
+    "fast-check": "^2.14.0",
+    "fs-extra": "^10.0.0",
+    "istanbul": "^0.4.5",
+    "jest": "26.6.3",
+    "jest-junit": "^12.0.0",
+    "rollup": "^2.47.0",
+    "semantic-release": "^17.4.2",
+    "terser": "^5.7.0",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "optionalDependencies": {
+    "rxjs": "^6"
+  },
+  "jest": {
+    "testURL": "http://localhost",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "public_api.ts"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "rxjs": "^6"
+  }
+}
