@@ -91,6 +91,6 @@
     ]
   },
   "dependencies": {
-    "rxjs": "^6"
+    "rxjs": "^7.0.0"
   }
 }
